@@ -35,18 +35,8 @@ data "aws_subnets" "all_subnets" {
     values = ["${var.env}-abc-subnet-1-pub"]
   }
 }
-
-output "ami_id" {
-  value = data.aws_ami.example.id
-}
-
-
-
-# Provider configuration
-provider "aws" {
-  region = "us-west-2" # Change to the desired region
-}
 */
+
 # Data source to get EC2 instance details
 data "aws_instance" "target_instance" {
   //provider = aws.aws_lab
