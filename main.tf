@@ -71,3 +71,8 @@ output "attached_volumes" {
 output "all_snapshots" {
   value = aws_ebs_snapshot.target_snapshot
 }
+
+# Output info about instance 
+output "instance_info" {
+  value = data.aws_instance.target_instance
+}
