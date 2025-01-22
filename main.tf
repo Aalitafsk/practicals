@@ -40,7 +40,7 @@ data "aws_subnets" "all_subnets" {
 # Data source to get EC2 instance details
 data "aws_instance" "target_instance" {
   provider = aws.aws_lab
-  instance_id = "i-0045d44e38bf9f4bc" # Replace with your instance ID
+  instance_id = "i-013e6c98aa223a783" # Replace with your instance ID
 }
 
 # Fetch all attached volumes of the instance
@@ -55,7 +55,7 @@ data "aws_ebs_volumes" "attached_volumes" {
 # Snapshot a specific volume by ID
 resource "aws_ebs_snapshot" "target_snapshot" {
   provider = aws.aws_lab
-  volume_id = "vol-041324c5e91bc3764" # Replace with the specific volume ID
+  volume_id = "vol-021bf07ffeb51511d" # Replace with the specific volume ID
   tags = {
     Name        = "MySnapshot"
     CreatedBy   = "Terraform"
