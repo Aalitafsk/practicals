@@ -76,3 +76,8 @@ resource "aws_ebs_snapshot" "target_snapshot" {
 output "attached_volumes" {
   value = data.aws_ebs_volumes.attached_volumes.ids
 }
+
+# Output all snapshots 
+output "all_snapshots" {
+  value = aws_ebs_snapshot.target_snapshot
+}
