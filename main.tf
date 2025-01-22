@@ -39,13 +39,13 @@ data "aws_subnets" "all_subnets" {
 
 # Data source to get EC2 instance details
 data "aws_instance" "target_instance" {
-  //provider = aws.aws_lab
+  provider = aws.aws_lab
   instance_id = "i-0045d44e38bf9f4bc" # Replace with your instance ID
 }
 
 # Fetch all attached volumes of the instance
 data "aws_ebs_volumes" "attached_volumes" {
-  //provider = aws.aws_lab
+  provider = aws.aws_lab
   filter {
     name   = "attachment.instance-id"
     values = [data.aws_instance.target_instance.id]
@@ -54,7 +54,7 @@ data "aws_ebs_volumes" "attached_volumes" {
 
 # Snapshot a specific volume by ID
 resource "aws_ebs_snapshot" "target_snapshot" {
-  // provider = aws.aws_lab
+  provider = aws.aws_lab
   volume_id = "vol-041324c5e91bc3764" # Replace with the specific volume ID
   tags = {
     Name        = "MySnapshot"
